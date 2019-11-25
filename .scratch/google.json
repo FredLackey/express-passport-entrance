@@ -1,0 +1,31 @@
+{
+  "id": "101696439243972098765",
+  "displayName": "Fred Lackey",
+  "name": {
+    "familyName": "Lackey",
+    "givenName": "Fred"
+  },
+  "emails": [
+    {
+      "value": "fred.lackey@gmail.com",
+      "verified": true
+    }
+  ],
+  "photos": [
+    {
+      "value": "https://lh3.googleusercontent.com/a-/AAuE7mCM0fXWGxCU1Ifwei4Ia3zuhpS1R6woJuOz7EaroA"
+    }
+  ],
+  "provider": "google",
+  "_raw": "{\n  \"sub\": \"101696439243972098765\",\n  \"name\": \"Fred Lackey\",\n  \"given_name\": \"Fred\",\n  \"family_name\": \"Lackey\",\n  \"picture\": \"https://lh3.googleusercontent.com/a-/AAuE7mCM0fXWGxCU1Ifwei4Ia3zuhpS1R6woJuOz7EaroA\",\n  \"email\": \"fred.lackey@gmail.com\",\n  \"email_verified\": true,\n  \"locale\": \"en\"\n}",
+  "_json": {
+    "sub": "101696439243972098765",
+    "name": "Fred Lackey",
+    "given_name": "Fred",
+    "family_name": "Lackey",
+    "picture": "https://lh3.googleusercontent.com/a-/AAuE7mCM0fXWGxCU1Ifwei4Ia3zuhpS1R6woJuOz7EaroA",
+    "email": "fred.lackey@gmail.com",
+    "email_verified": true,
+    "locale": "en"
+  }
+}

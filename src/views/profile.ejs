@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Entrance Example</title>
+    <script src="https://kit.fontawesome.com/5b03120259.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="/public/assets/css/navbar-top-fixed.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">Entrance Example</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <% if (user) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+      <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link disabled">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      <% } %>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<main role="main" class="container">
+
+  <div class="row">
+    <div class="col-md-6">
+      <div>
+        <label for="name">Name <span class="text-muted">(Optional)</span></label>
+        <input type="text" class="form-control" id="name" placeholder="Joe Blow" <% if(user.name) {%> value="<%= user.name %>" <% } %>/>
+        <div class="invalid-feedback">
+          Please enter a valid name.
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div>
+        <label for="email">Email <span class="text-muted">(Optional)</span></label>
+        <input type="email" class="form-control" id="email" placeholder="you@example.com" <% if(user.email) {%> value="<%= user.email %>" <% } %>/>
+        <div class="invalid-feedback">
+          Please enter a valid email address.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>&nbsp;</div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col">
+          <% if (!user.bitbucket) { %>
+            <a class="btn btn-lg btn-primary btn-block" href="/auth/bitbucket/link">BitBucket</a>
+          <% } else { %>
+            <a class="btn btn-lg btn-success btn-block" href="/auth/bitbucket/unlink">BitBucket</a>
+          <% } %>
+        </div>
+        <div class="col">
+          <% if (!user.linkedin) { %>
+            <a class="btn btn-lg btn-primary btn-block" href="/auth/linkedin/link">LinkedIn</a>
+          <% } else { %>
+            <a class="btn btn-lg btn-success btn-block" href="/auth/linkedin/unlink">LinkedIn</a>
+          <% } %>
+        </div>
+      </div>
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col">
+          <% if (!user.facebook) { %>
+            <a class="btn btn-lg btn-primary btn-block" href="/auth/facebook/link">Facebook</a>
+          <% } else { %>
+            <a class="btn btn-lg btn-success btn-block" href="/auth/facebook/unlink">Facebook</a>
+          <% } %>
+        </div>
+        <div class="col">
+          <% if (!user.live) { %>
+            <a class="btn btn-lg btn-primary btn-block" href="/auth/live/link">Live</a>
+          <% } else { %>
+            <a class="btn btn-lg btn-success btn-block" href="/auth/live/unlink">Live</a>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col">
+          <% if (!user.github) { %>
+            <a class="btn btn-lg btn-primary btn-block" href="/auth/github/link">GitHub</a>
+          <% } else { %>
+            <a class="btn btn-lg btn-success btn-block" href="/auth/github/unlink">GitHub</a>
+          <% } %>
+        </div>
+        <div class="col">
+          <% if (!user.spotify) { %>
+            <a class="btn btn-lg btn-primary btn-block" href="/auth/spotify/link">Spotify</a>
+          <% } else { %>
+            <a class="btn btn-lg btn-success btn-block" href="/auth/spotify/unlink">Spotify</a>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col">
+          <% if (!user.google) { %>
+            <a class="btn btn-lg btn-primary btn-block" href="/auth/google/link">Google</a>
+          <% } else { %>
+            <a class="btn btn-lg btn-success btn-block" href="/auth/google/unlink">Google</a>
+          <% } %>
+        </div>
+        <div class="col">
+          <% if (!user.yahoo) { %>
+            <a class="btn btn-lg btn-primary btn-block" href="/auth/twitch/link">Twitch</a>
+          <% } else { %>
+            <a class="btn btn-lg btn-success btn-block" href="/auth/twitch/unlink">Twitch</a>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="row">&nbsp;</div>
+      <div class="row">
+        <div class="col">
+          <% if (!user.instagram) { %>
+            <a class="btn btn-lg btn-primary btn-block" href="/auth/instagram/link">Instagram</a>
+          <% } else { %>
+            <a class="btn btn-lg btn-success btn-block" href="/auth/instagram/unlink">Instagram</a>
+          <% } %>
+        </div>
+        <div class="col">
+          <% if (!user.yahoo) { %>
+            <a class="btn btn-lg btn-primary btn-block" href="/auth/yahoo/link">Yahoo</a>
+          <% } else { %>
+            <a class="btn btn-lg btn-success btn-block" href="/auth/yahoo/unlink">Yahoo</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</main>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/public/assets/js/jquery-slim.min.js"><\/script>')</script><script src="/public/assets/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script></body>
+</html>
